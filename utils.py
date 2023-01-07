@@ -1,6 +1,6 @@
 import json
 
-""""– возвращает список всех кандидатов """
+""""загружает кандидатов из json """
 
 
 def load_candidates_from_json():
@@ -8,14 +8,14 @@ def load_candidates_from_json():
         return json.load(file)
 
 
-"""– возвращает одного кандидата по его id"""
+"""возвращает весь список кандидатов"""
 
 
 def get_all():
     return load_candidates_from_json()
 
 
-""""– возвращает кандидатов по имени"""
+""""– возвращает кандидатов по номеру"""
 
 
 def get_candidate_by_id(pk):
@@ -23,6 +23,8 @@ def get_candidate_by_id(pk):
         if candidate['id'] == pk:
             return candidate
     return 'Not found'
+
+""""– возвращает кандидатов по имени"""
 
 
 def get_candidates_by_name(candidate_name):
